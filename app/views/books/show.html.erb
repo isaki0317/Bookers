@@ -1,14 +1,19 @@
-<p id="notice"></p> #投稿されました表示する
+<% if flash[:notice] %>
+    <div class="flash">
+        <%= flash[:notice] %>
+    </div>
+<% end %>
 
 <p>
-    <storong>Title:</strong><%= @book.title %>
+    <strong>Title:</strong><%= @book.title %>
 </p>
 
 <p>
-    <storong>Body:</strong><%= @book.body %>
+    <strong>Body:</strong><%= @book.body %>
 </p>
 
 <%= link_to "Edit",edit_book_path(@book) %>
+|
 <%= link_to "Back",books_path %>
 
 
